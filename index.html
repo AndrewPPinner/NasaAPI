@@ -17,7 +17,7 @@
             <p>{{ date }}</p>
             <img v-show='mediaType === "image"' v-bind:src=spaceImg>
             <iframe v-show='mediaType === "video"' v-bind:src=spaceImg width="650" height="400"></iframe>
-            <p>{{ explanation }}</p>
+            <p id='explain'>{{ explanation }}</p>
         </div>
         <script src="app.js" async defer></script>
     </body>
