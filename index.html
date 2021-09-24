@@ -6,7 +6,7 @@
         <title>Daily Space Photo</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="stylesheet.css">
         <script src="https://unpkg.com/vue@3.0.2"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     </head>
@@ -16,6 +16,7 @@
             <p>{{ title }}</p>
             <p>{{ date }}</p>
             <img v-bind:src=spaceImg>
+            <iframe v-show='mediaType === "video"' v-bind:src=spaceImg width="650" height="400"></iframe>
             <p>{{ explanation }}</p>
         </div>
         <script src="app.js" async defer></script>

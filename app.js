@@ -4,13 +4,14 @@ const app = Vue.createApp ({
             spaceImg: null,
             date: null,
             title: null,
-            explanation: null
+            explanation: null,
+            mediaType: null
         }
     },
-    mounted() {
+    mounted(error) {
             axios
             .get("https://api.nasa.gov/planetary/apod?api_key=2jbed0ziekmkhL6uZBoIkbPdaSVSdL1H2LGBxJHI")
-            .then(response => (console.log(response), this.spaceImg = response.data.url, this.date = response.data.date, this.title = response.data.title, this.explanation = response.data.explanation))
+            .then(response => (console.log(response), this.mediaType = response.data.media_type, this.spaceImg = response.data.url, this.date = response.data.date, this.title = response.data.title, this.explanation = response.data.explanation))
             .catch(e => (console.log(e)))
     }
 })
