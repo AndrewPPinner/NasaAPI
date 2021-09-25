@@ -1,7 +1,13 @@
 img {
-    width: 100%;
+    max-width: 98%;
     border-radius: 2%;
 }
 body {
     background-color: lightslategray;
+}
+a {
+    display: inline-block;
+    color: black;
+    background-color: whitesmoke;
+    border-radius: 1%;
 }
