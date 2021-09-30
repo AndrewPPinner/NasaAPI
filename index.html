@@ -28,6 +28,9 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#">Resume</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Other Projects</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -35,8 +38,11 @@
         <div id="app">
             <h2 class="fs-1">{{ title }}</h2>
             <p>{{ date }}</p>
-            <img class="mw-100" v-show='mediaType === "image"' v-bind:src=spaceImg>
-            <iframe class="mw-100" v-show='mediaType === "video"' v-bind:src=spaceImg width="650" height="400"></iframe>
+            <div v-show='spinner' class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <img class="mw-100" v-show='mediaType === "image" && spinner == false' v-bind:src=spaceImg>
+            <iframe class="mw-100" v-show='mediaType === "video" && spinner == false' v-bind:src=spaceImg width="650" height="400"></iframe>
             <p id='explain'>{{ explanation }}</p>
         </div>
         <script src="app.js" async defer></script>
